@@ -1,0 +1,14 @@
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+/* Botón principal de las acciones (Crear / Guardar).
+   Se colorea mediante los tokens de Material del filled button
+   para mantener el fondo, el texto y la capa de hover consistentes. */
+
+.btn-primario {
+  --mat-button-filled-container-color: #0A132D;
+  --mat-button-filled-label-text-color: #ffffff;
+
+  --mat-button-filled-state-layer-color: #ffffff;
+}

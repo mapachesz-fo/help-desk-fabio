@@ -1,0 +1,156 @@
+/* =========================================================
+   CABECERAS DE LAS TABLAS
+   ========================================================= */
+
+/* El selector incluye .mat-mdc-table porque Material aplica
+   ".mat-mdc-table .mat-mdc-header-cell { background: inherit }"
+   con mayor especificidad que un selector de una sola clase */
+
+table.mat-mdc-table th.mat-mdc-header-cell {
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  color: #ffffff;
+  background-color: #950539;
+}
+
+
+/* =========================================================
+   CELDAS
+   ========================================================= */
+
+td.mat-mdc-cell {
+  font-size: 14px;
+
+  color: #475569;
+}
+
+
+/* =========================================================
+   FILAS
+   ========================================================= */
+
+tr.mat-mdc-row {
+  transition: background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER DE LA FILA
+   ========================================================= */
+
+tr.mat-mdc-row:hover {
+  background: #fdf5f8;
+}
+
+
+/* =========================================================
+   PRIMERA COLUMNA (ID)
+   ========================================================= */
+
+td.mat-column-id {
+  font-weight: 600;
+
+  color: #950539;
+}
+
+
+/* =========================================================
+   COLUMNA DE ACCIONES
+   ========================================================= */
+
+td.mat-column-acciones {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ICONOS DE ACCIONES
+   ========================================================= */
+
+td.mat-column-acciones .accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  margin-right: 6px;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  border: 1px solid #950539;
+  border-radius: 8px;
+
+  background-color: #950539;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   ICONO DEL BOTÓN DE ACCIÓN
+   ========================================================= */
+
+td.mat-column-acciones .accion mat-icon {
+  font-size: 20px;
+
+  width: 20px;
+  height: 20px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   HOVER DEL BOTÓN DE ACCIÓN
+   ========================================================= */
+
+td.mat-column-acciones .accion:hover:not([disabled]) {
+  background-color: #7a0430;
+
+  border-color: #7a0430;
+}
+
+
+/* =========================================================
+   BOTÓN DE ACCIÓN DESHABILITADO
+   ========================================================= */
+
+td.mat-column-acciones .accion[disabled] {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ÚLTIMO BOTÓN DE ACCIÓN
+   ========================================================= */
+
+td.mat-column-acciones .accion:last-child {
+  margin-right: 0;
+}
+
+
+/* =========================================================
+   FOCO DE ACCESIBILIDAD
+   ========================================================= */
+
+td.mat-column-acciones .accion:focus-visible {
+  outline: 2px solid #950539;
+
+  outline-offset: 2px;
+}

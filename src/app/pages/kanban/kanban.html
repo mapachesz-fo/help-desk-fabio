@@ -1,0 +1,137 @@
+<section class="kanban-page">
+  <header class="encabezado">
+    <h1>Tablero Kanban</h1>
+    <p>
+      Tickets organizados por estado.
+    </p>
+  </header>
+
+  @if(cargando()){
+    <div class="mensaje">
+      Cargando datos.
+    </div>
+  }@else if (errorCarga()) {
+    <div class="mensaje-error">
+      No fue posible cargar los tickets!
+    </div>
+  }@else if (tickets().length === 0)
+  {
+    <div class="mensaje">
+      No hay tickets registrados.
+    </div>
+  }@else {
+    <div class="filtros" aria-label="Panel de filtros">
+
+      <div class="filtro-item">
+        <mat-form-field appearance="outline">
+          <mat-label>Buscar</mat-label>
+          <input
+            matInput
+            type="search"
+            placeholder="ID, Asunto o Descripción"
+            [value]="filtros().texto"
+            (input)="aplicarBusqueda($any($event.target).value)">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <div class="filtro-item">
+        <mat-form-field appearance="outline">
+          <mat-label>Estado</mat-label>
+          <mat-select [value]="filtros().estado" (selectionChange)="aplicarFiltroEstado($event.value)">
+            <mat-option value="">Todos</mat-option><mat-option value="Abierto">Abierto</mat-option><mat-option value="En proceso">En Proceso</mat-option><mat-option value="Cerrado">Cerrado</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="filtro-item">
+        <mat-form-field appearance="outline">
+          <mat-label>Prioridad</mat-label>
+          <mat-select [value]="filtros().prioridad" (selectionChange)="aplicarFiltroPrioridad($event.value)">
+            <mat-option value="">Todas</mat-option><mat-option value="Baja">Baja</mat-option><mat-option value="Media">Media</mat-option><mat-option value="Alta">Alta</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="filtro-item">
+        <mat-form-field appearance="outline">
+          <mat-label>Desde</mat-label>
+          <input
+            matInput
+            [matDatepicker]="desdePicker"
+            [value]="parseFecha(filtros().fechaDesde)"
+            (dateChanged)="aplicarFechaDesde($any($event).value)">
+          <mat-datepicker-toggle matSuffix [for]="desdePicker"></mat-datepicker-toggle>
+          <mat-datepicker #desdePicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="filtro-item">
+        <mat-form-field appearance="outline">
+          <mat-label>Hasta</mat-label>
+          <input
+            matInput
+            [matDatepicker]="hastaPicker"
+            [value]="parseFecha(filtros().fechaHasta)"
+            (dateChanged)="aplicarFechaHasta($any($event).value)">
+          <mat-datepicker-toggle matSuffix [for]="hastaPicker"></mat-datepicker-toggle>
+          <mat-datepicker #hastaPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <button
+        mat-stroked-button
+        class="btn-limpiar-filtros"
+        type="button"
+        (click)="limpiarFiltros()">
+        Limpiar
+      </button>
+
+    </div>
+
+    <div class="tablero" cdkDropListGroup>
+      @for (columna of estados; track columna.nombre) {
+        <app-kanban-columna
+          [titulo]="columna.titulo"
+          [estado]="columna.nombre"
+          [tickets]="ticketsPorEstado(columna.nombre)"
+
+          (cambiarEstado)="actualizarEstado(
+            $event.ticket,
+            $event.nuevoEstado
+          )"
+
+          (moverTicket)="actualizarEstado($event.ticket, $event.estadoDestino)"
+        />
+      }
+    </div>
+
+    <div class="paginacion">
+      <span class="pagina-info">
+        Página {{ paginaActual() + 1 }} de {{ totalPaginas() }}
+      </span>
+
+      <mat-select [(value)]="ticketsPorPagina" (selectionChange)="cambiarTamanoPagina($event.value)">
+        <mat-option value="10">10 por página</mat-option>
+        <mat-option value="15">15 por página</mat-option>
+        <mat-option value="20">20 por página</mat-option>
+      </mat-select>
+
+      <button
+        mat-stroked-button
+        type="button"
+        [disabled]="paginaActual() === 0"
+        (click)="cambiarPagina(paginaActual() - 1)">
+        Anterior
+      </button>
+      <button
+        mat-stroked-button
+        type="button"
+        [disabled]="paginaActual() >= totalPaginas() - 1 || totalPaginas() === 0"
+        (click)="cambiarPagina(paginaActual() + 1)">
+        Siguiente
+      </button>
+    </div>
+  }
+
+</section>

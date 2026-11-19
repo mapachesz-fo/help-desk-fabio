@@ -1,0 +1,32 @@
+:host {
+  display: inline-block;
+}
+.estado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 82px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.estado.abierto {
+    background-color: var(--est-abierto-bg);
+    color: var(--est-abierto-texto);
+    border: 1px solid var(--est-abierto-borde);
+}
+
+.estado.proceso {
+    background-color: var(--est-proceso-bg);
+    color: var(--est-proceso-texto);
+    border: 1px solid var(--est-proceso-borde);
+}
+
+.estado.cerrado {
+    background-color: var(--est-cerrado-bg);
+    color: var(--est-cerrado-texto);
+    border: 1px solid var(--est-cerrado-borde);
+}

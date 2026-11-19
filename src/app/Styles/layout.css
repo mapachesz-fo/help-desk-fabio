@@ -1,0 +1,544 @@
+/* =========================================================
+   TOKENS DE COLOR (PRIORIDAD Y ESTADO)
+   ========================================================= */
+
+:root {
+  --pri-alta-bg: #fee2e2;
+  --pri-alta-borde: #dc2626;
+  --pri-alta-texto: #b91c1c;
+
+  --pri-media-bg: #fef3c7;
+  --pri-media-borde: #d97706;
+  --pri-media-texto: #92400e;
+
+  --pri-baja-bg: #dcfce7;
+  --pri-baja-borde: #16a34a;
+  --pri-baja-texto: #15803d;
+
+  --est-abierto-bg: #dbeafe;
+  --est-abierto-borde: #2563eb;
+  --est-abierto-texto: #1d4ed8;
+
+  --est-proceso-bg: #fef3c7;
+  --est-proceso-borde: #d97706;
+  --est-proceso-texto: #a16207;
+
+  --est-cerrado-bg: #dcfce7;
+  --est-cerrado-borde: #16a34a;
+  --est-cerrado-texto: #15803d;
+
+  /* Tokens globales de superficie y componentes */
+  --sys-surface: #ffffff;
+  --sys-surface-alt: #f8fafc;
+  --sys-border: #e2e8f0;
+  --sys-border-focus: #2563eb;
+  --sys-text: #0f172a;
+  --sys-text-muted: #475569;
+  --sys-text-light: #64748b;
+  --sys-shadow: 0 4px 6px -1px rgb(15 23 42 / 0.08);
+  --sys-shadow-hover: 0 8px 16px -4px rgb(15 23 42 / 0.12);
+  --sys-radius: 12px;
+  --sys-radius-sm: 8px;
+  --sys-transition: 0.2s ease;
+}
+
+
+/* =========================================================
+   ESTRUCTURA PRINCIPAL
+   ========================================================= */
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.layout {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  background: #f5f7fa;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  width: 240px;
+
+  background-color: #950539;
+
+  background-image:
+    linear-gradient(rgba(149, 5, 57, 0.85), rgba(149, 5, 57, 0.85)),
+    url('/img/motivo.png');
+  background-repeat: no-repeat;
+  background-position: 70% center;
+  background-size: cover;
+
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
+
+  color: #ffffff;
+
+  /* Tokens de Material: fuerzan textos e iconos blancos */
+  --mat-sidenav-content-text-color: #ffffff;
+
+  --mat-list-list-item-label-text-color: #ffffff;
+  --mat-list-list-item-hover-label-text-color: #ffffff;
+  --mat-list-list-item-focus-label-text-color: #ffffff;
+  --mat-list-list-item-selected-label-text-color: #ffffff;
+
+  --mat-list-list-item-leading-icon-color: #ffffff;
+  --mat-list-list-item-hover-leading-icon-color: #ffffff;
+  --mat-list-list-item-selected-leading-icon-color: #ffffff;
+
+  --mat-list-active-indicator-color: #ffffff;
+
+  /* Items del menú con forma rectangular (sin esquinas redondeadas) */
+  --mat-list-active-indicator-shape: 0px;
+}
+
+
+/* =========================================================
+   CABECERA DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 20px;
+}
+
+
+/* =========================================================
+   ICONO DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-header > mat-icon {
+  font-size: 30px;
+
+  width: 30px;
+  height: 30px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TEXTO DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-header > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================================================
+   TÍTULO DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-title {
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SUBTÍTULO DEL SIDEBAR
+   ========================================================= */
+
+.sidebar-subtitle {
+  margin-top: 2px;
+
+  font-size: 11px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TÍTULO DEL MENÚ
+   ========================================================= */
+
+/* =========================================================
+   TÍTULO DEL MENÚ
+   ========================================================= */
+
+.menu-titulo {
+  margin: 8px 20px 14px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   INDICADOR DEL TÍTULO
+   ========================================================= */
+
+  .menu-titulo::after {
+    content: '';
+
+    display: block;
+
+    width: 32px;
+    height: 2px;
+
+    margin-top: 8px;
+
+    background: #ffffff;
+  }
+
+
+/* =========================================================
+   ELEMENTOS DEL MENÚ
+   ========================================================= */
+
+.sidebar mat-nav-list a {
+  position: relative;
+
+  margin: 4px 10px;
+
+  color: #ffffff;
+
+  font-weight: 400;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   FORMA RECTANGULAR DE LOS ÍTEMS
+   ========================================================= */
+
+.sidebar .mat-mdc-nav-list a,
+.sidebar .mat-mdc-nav-list button.menu-padre {
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   TEXTO DE LOS ÍTEMS
+   ========================================================= */
+
+.sidebar .mat-mdc-nav-list a .mdc-list-item__primary-text,
+.sidebar .mat-mdc-nav-list button.menu-padre .mdc-list-item__primary-text {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ICONOS
+   ========================================================= */
+
+.sidebar mat-nav-list a mat-icon {
+  color: #ffffff;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.sidebar mat-nav-list a:hover {
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+}
+
+.sidebar mat-nav-list a:hover mat-icon {
+  color: #ffffff;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   ELEMENTO ACTIVO
+   ========================================================= */
+
+.sidebar .mat-mdc-nav-list a.activo {
+  background: #ffffff;
+
+  color: #950539;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ICONO ACTIVO
+   ========================================================= */
+
+.sidebar .mat-mdc-nav-list a.activo mat-icon {
+  color: #950539;
+}
+
+
+/* =========================================================
+   TEXTO ACTIVO
+   ========================================================= */
+
+.sidebar .mat-mdc-nav-list a.activo .mdc-list-item__primary-text {
+  color: #950539;
+}
+
+
+/* =========================================================
+   BARRA LATERAL DE SELECCIÓN
+   ========================================================= */
+
+.sidebar mat-nav-list a.activo::before {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 4px;
+
+  background: #950539;
+}
+
+
+/* =========================================================
+   FOCO DE ACCESIBILIDAD
+   ========================================================= */
+
+.sidebar mat-nav-list a:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: -2px;
+}
+
+.sidebar .mat-mdc-nav-list a.activo:focus-visible {
+  outline-color: #950539;
+}
+
+
+/* =========================================================
+   MENÚ PADRE EXPANDIBLE (SUBMENÚ)
+   ========================================================= */
+
+.sidebar mat-nav-list button.menu-padre {
+  position: relative;
+
+  display: flex;
+
+  width: calc(100% - 20px);
+
+  margin: 4px 10px;
+
+  background: transparent;
+
+  border: none;
+
+  text-align: left;
+
+  color: #ffffff;
+
+  font-weight: 400;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   ICONOS DEL MENÚ PADRE
+   ========================================================= */
+
+.sidebar mat-nav-list button.menu-padre mat-icon {
+  color: #ffffff;
+
+  transition: color 0.2s ease;
+}
+
+
+/* =========================================================
+   HOVER DEL MENÚ PADRE
+   ========================================================= */
+
+.sidebar mat-nav-list button.menu-padre:hover {
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+}
+
+.sidebar mat-nav-list button.menu-padre:hover mat-icon {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MENÚ PADRE ABIERTO
+   ========================================================= */
+
+.sidebar mat-nav-list button.menu-padre.abierto {
+  background: rgba(255, 255, 255, 0.18);
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ÍCONO DE TICKET: ESTADO DEL SUBMENÚ
+   ========================================================= */
+
+mat-nav-list button.menu-padre mat-icon.icono-ticket {
+  font-family: 'Material Icons Outlined';
+}
+
+mat-nav-list button.menu-padre mat-icon.icono-ticket.abierto {
+  font-family: 'Material Icons';
+}
+
+
+/* =========================================================
+   ELEMENTOS DEL SUBMENÚ
+   ========================================================= */
+
+mat-nav-list a.submenu-item {
+  margin: 2px 10px 2px 46px;
+
+  min-height: 40px;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   BARRA LATERAL DEL SUBMENÚ ACTIVO
+   ========================================================= */
+
+mat-nav-list a.submenu-item.activo::before {
+  top: 6px;
+
+  bottom: 6px;
+}
+
+
+/* =========================================================
+   PANEL DE SESIÓN (SIDEBAR)
+   ========================================================= */
+
+.sesion-panel {
+  margin: 16px 10px 20px;
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+
+  color: #ffffff;
+}
+
+.sesion-datos {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.sesion-datos mat-icon {
+  color: #ffffff;
+}
+
+.sesion-datos div {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.sesion-datos strong {
+  font-size: 13px;
+  font-weight: 600;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sesion-datos span {
+  font-size: 11px;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sesion-cerrar {
+  width: 100%;
+
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: #ffffff !important;
+}
+
+.sesion-cerrar:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.contenedor {
+  min-height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .contenedor {
+    padding: 16px;
+  }
+
+}

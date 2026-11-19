@@ -1,0 +1,155 @@
+{
+  "tickets": [
+    {
+      "asunto": "No puedo iniciar sesión con mi cuenta",
+      "descripcion": "Al ingresar las credenciales el sistema indica usuario o contraseña incorrectos, aunque el acceso se realizó ayer sin problemas.",
+      "estado": "Abierto",
+      "prioridad": "Alta",
+      "fechaCreacion": "2026-10-18",
+      "id": "1"
+    },
+    {
+      "asunto": "Error 500 al guardar un ticket",
+      "descripcion": "Al registrar un ticket nuevo la pantalla queda en blanco y se muestra un error interno del servidor.",
+      "estado": "En proceso",
+      "prioridad": "Alta",
+      "fechaCreacion": "2026-10-17",
+      "id": "2"
+    },
+    {
+      "asunto": "Solicitud de alta de usuario",
+      "descripcion": "Se requiere crear una cuenta nueva para un colaborador que se incorporará al área de soporte.",
+      "estado": "Abierto",
+      "prioridad": "Media",
+      "fechaCreacion": "2026-10-15",
+      "id": "3"
+    },
+    {
+      "asunto": "El reporte mensual no se descarga",
+      "descripcion": "Al pulsar el botón de descarga del reporte consolidado el archivo no se genera y queda en estado cargando.",
+      "estado": "En proceso",
+      "prioridad": "Baja",
+      "fechaCreacion": "2026-10-14",
+      "id": "4"
+    },
+    {
+      "asunto": "Los adjuntos comprimidos superan el tamaño permitido",
+      "descripcion": "Al adjuntar una imagen pesimada el sistema rechaza el archivo indicando que excede el límite.",
+      "estado": "En proceso",
+      "prioridad": "Baja",
+      "fechaCreacion": "2026-10-08",
+      "id": "8"
+    },
+    {
+      "asunto": "El tablero Kanban no carga los submenús",
+      "descripcion": "Las columnas del Kanban aparecen vacías y los menús de filtros no responden a las clics.",
+      "estado": "Abierto",
+      "prioridad": "Alta",
+      "fechaCreacion": "2026-10-07",
+      "id": "9"
+    },
+    {
+      "asunto": "Solicitud de permisos de administrador",
+      "descripcion": "Un usuario requiere acceso al módulo de configuración para gestionar las áreas de soporte.",
+      "estado": "Cerrado",
+      "prioridad": "Alta",
+      "fechaCreacion": "2026-10-06",
+      "id": "10"
+    },
+    {
+      "asunto": "Notificaciones por correo duplicadas",
+      "descripcion": "Cada actualización de un ticket envía dos correos con el mismo contenido al responsable.",
+      "estado": "Cerrado",
+      "prioridad": "Media",
+      "fechaCreacion": "2026-10-03",
+      "id": "11"
+    },
+    {
+      "asunto": "Los filtros de búsqueda se restablecen al paginar",
+      "descripcion": "Al cambiar de página el listado descarta el estado seleccionado y vuelve a mostrar todos los tickets.",
+      "estado": "En proceso",
+      "prioridad": "Baja",
+      "fechaCreacion": "2026-10-02",
+      "id": "12"
+    },
+    {
+      "asunto": "Error al exportar los tickets a Excel",
+      "descripcion": "La exportación genera un archivo vacío y el navegador informa que el formato no es compatible.",
+      "estado": "Cerrado",
+      "prioridad": "Media",
+      "fechaCreacion": "2026-09-30",
+      "id": "13"
+    },
+    {
+      "id": "14",
+      "asunto": "La sesión expira demasiado rápido",
+      "descripcion": "El usuario debe volver a autenticarse cada pocos minutos, incluso en medio de una tarea en curso.",
+      "estado": "Cerrado",
+      "prioridad": "Baja",
+      "fechaCreacion": "2026-09-28"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "Andrea Molina Ruiz",
+      "correo": "andrea.molina@siedigital.cl",
+      "rol": "Administrador"
+    },
+    {
+      "id": "2",
+      "nombre": "Rodrigo Salas Peña",
+      "correo": "rodrigo.salas@siedigital.cl",
+      "rol": "Soporte"
+    },
+    {
+      "id": "3",
+      "nombre": "Camila Fuentes Toro",
+      "correo": "camila.fuentes@siedigital.cl",
+      "rol": "Usuario"
+    },
+    {
+      "id": "4",
+      "nombre": "Sebastián Vergara Molina",
+      "correo": "sebastian.vergara@siedigital.cl",
+      "rol": "Soporte"
+    },
+    {
+      "id": "5",
+      "nombre": "Valentina Cáceres Rojas",
+      "correo": "valentina.caceres@siedigital.cl",
+      "rol": "Usuario"
+    },
+    {
+      "id": "6",
+      "nombre": "Matías Contreras Díaz",
+      "correo": "matias.contreras@siedigital.cl",
+      "rol": "Usuario"
+    },
+    {
+      "id": "7",
+      "nombre": "Javiera Alonso Tapia",
+      "correo": "javiera.alonso@siedigital.cl",
+      "rol": "Soporte"
+    },
+    {
+      "id": "8",
+      "nombre": "Ignacio Bejarano Rivas",
+      "correo": "ignacio.bejarano@siedigital.cl",
+      "rol": "Administrador"
+    },
+    {
+      "id": "9",
+      "nombre": "Francisca Sandoval Pérez",
+      "correo": "francisca.sandoval@siedigital.cl",
+      "rol": "Usuario"
+    },
+    {
+      "id": "10",
+      "nombre": "Benjamín Navarro Castillo",
+      "correo": "benjamin.navarro@siedigital.cl",
+      "rol": "Soporte"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

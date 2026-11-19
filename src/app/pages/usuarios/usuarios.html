@@ -1,0 +1,120 @@
+<section class="usuarios">
+
+    <div class="encabezado">
+
+        <h1>Gestión de Usuarios</h1>
+
+        <p>
+            Usuarios registrados en el sistema
+        </p>
+
+    </div>
+
+    @if (cargando()) {
+
+        <p class="mensaje">
+            Cargando usuarios...
+        </p>
+
+    }
+
+    @else if (error()) {
+
+        <div class="mensaje error">
+            No fue posible obtener los registros
+        </div>
+
+    }
+
+    @else {
+
+        <div class="tabla-contenedor">
+
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="id">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        ID
+                    </th>
+
+                    <td mat-cell *matCellDef="let usuario">
+                        #{{ usuario.id }}
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="nombre">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Nombre
+                    </th>
+
+                    <td mat-cell *matCellDef="let usuario">
+                        {{ usuario.nombre }}
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="correo">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Correo
+                    </th>
+
+                    <td mat-cell *matCellDef="let usuario">
+                        <app-correo-usuario [correo]="usuario.correo"></app-correo-usuario>
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="rol">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Rol
+                    </th>
+
+                    <td mat-cell *matCellDef="let usuario">
+                        <app-rol-usuario [rol]="usuario.rol"></app-rol-usuario>
+                    </td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="acciones">
+
+                    <th mat-header-cell *matHeaderCellDef>
+                        Acciones
+                    </th>
+
+                    <td mat-cell *matCellDef="let usuario">
+
+                      <app-acciones-usuario [usuario]="usuario" [eliminando]="eliminandoId() === usuario.id" (eliminar)="eliminarUsuario($event)"></app-acciones-usuario>
+
+                    </td>
+
+                </ng-container>
+
+                <tr
+                    mat-header-row
+                    *matHeaderRowDef="columnas">
+                </tr>
+
+                <tr
+                    mat-row
+                    *matRowDef="let row; columns: columnas;">
+                </tr>
+
+            </table>
+
+            <mat-paginator
+                [pageSize]="5"
+                [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons>
+            </mat-paginator>
+
+        </div>
+
+    }
+
+</section>

@@ -1,0 +1,17 @@
+:host {
+  display: inline-block;
+}
+
+.usuario-id{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 900;
+  background-color: #fbb2f1;
+  color: #b109ad;
+}

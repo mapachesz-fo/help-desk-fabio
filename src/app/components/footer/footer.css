@@ -1,0 +1,69 @@
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  display: flex;
+  align-items: center;
+
+  padding: 10px 24px;
+
+  box-sizing: border-box;
+
+  background-color: #0A132D;
+
+  border-top: 1px solid #1e2a4a;
+}
+
+
+/* =========================================================
+   CONTENIDO DEL FOOTER
+   ========================================================= */
+
+.footer-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   VERSIÓN
+   ========================================================= */
+
+.footer-version {
+  font-size: 12px;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   IMAGEN DEL FOOTER
+   ========================================================= */
+
+.footer-imagen {
+  width: 168px;
+  height: 10px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 10px 16px;
+  }
+
+  .footer-imagen {
+    width: 120px;
+  }
+
+}
