@@ -43,7 +43,8 @@
 }
 
 .acceso input[type="text"],
-.acceso input[type="password"] {
+.acceso input[type="password"],
+.acceso input:not([type]) {
   width: 100%;
   padding: 10px 14px;
 
@@ -60,7 +61,8 @@
 }
 
 .acceso input[type="text"]:focus,
-.acceso input[type="password"]:focus {
+.acceso input[type="password"]:focus,
+.acceso input:not([type]):focus {
   outline: none;
   border-color: var(--sys-border-focus);
   box-shadow: 0 0 0 3px rgb(37 99 235 / 0.12);
